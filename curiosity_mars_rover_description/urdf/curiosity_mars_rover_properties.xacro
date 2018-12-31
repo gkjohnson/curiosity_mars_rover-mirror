@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<!-- Constants -->
+	<xacro:property name="PI" value="3.1415926535897931"/>
+	
+	<!-- Scaling -->
+	<xacro:property name="scale_XYZ" value="1.0"/>
+
+	<!-- Chassis properties -->
+	<xacro:property name="chassisHeight" value="0.76"/>
+	<xacro:property name="chassisLength" value="2.08157"/>
+	<xacro:property name="chassisWidth" value="1.53774"/>
+	<xacro:property name="chassisMass" value="20.0"/>
+
+	<!-- Differential-drive wheels properties -->
+	<xacro:property name="wheelWidth" value="0.026"/>
+	<xacro:property name="wheelRadius" value="0.032"/>
+	<xacro:property name="wheelMass" value="0.05"/>
+	<xacro:property name="wheelOffsetY" value="0.037"/>
+	
+	
+</robot>

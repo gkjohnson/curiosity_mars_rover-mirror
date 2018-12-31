@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot name="curiosity_mars_rover" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Inertia matrices -->
+	<xacro:include filename="$(find curiosity_mars_rover_description)/urdf/macros.xacro" />
+	<!-- Robot constants and properties -->
+	<xacro:include filename="$(find curiosity_mars_rover_description)/urdf/curiosity_mars_rover_properties.xacro" />
+	<!-- Gazebo aspects of the robot -->
+	<xacro:include filename="$(find curiosity_mars_rover_description)/urdf/curiosity_mars_rover.gazebo" />
+	<!-- Chasis -->
+	<xacro:include filename="$(find curiosity_mars_rover_description)/urdf/chassis.xacro" />
+	<!-- Arms -->
+	<!--
+	<xacro:include filename="$(find curiosity_mars_rover_description)/urdf/wheel_tree.xacro" />
+	<wheel lr="left" tY="-1"/>
+	<wheel lr="right" tY="1"/>
+	-->
+	<chassis_body/>
+
+</robot>
