@@ -29,10 +29,66 @@
 
   <!-- Chassis -->
   <gazebo reference="chassis">
-
     <mu1>0.3</mu1>
     <mu2>0.3</mu2>
   </gazebo>
+
+  <!-- Wheel Train -->
+  <gazebo reference="left_axis">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+  </gazebo>
+
+  <gazebo reference="suspension_arm_F_L">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+  </gazebo>
+
+
+  <gazebo reference="right_axis">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+  </gazebo>
+
+  <gazebo reference="suspension_arm_F_R">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+  </gazebo>
+
+  <gazebo reference="suspension_arm_B_L">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+  </gazebo>
+
+  <gazebo reference="suspension_arm_B_R">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+  </gazebo>
+
+
+  <gazebo reference="suspension_arm_B_L_to_B2_L">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="suspension_arm_B_R_to_B2_R">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+
+  <gazebo reference="suspension_arm_B2_L">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+  </gazebo>
+
+  <gazebo reference="suspension_arm_B2_R">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+  </gazebo>
+
 
 
   <!-- Caster wheel -->

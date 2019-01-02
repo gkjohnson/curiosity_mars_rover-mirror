@@ -8,10 +8,25 @@
 	<xacro:property name="scale_XYZ" value="1.0"/>
 
 	<!-- Chassis properties -->
+	<!--
+	<xacro:property name="chassisHeight" value="0.76"/>
+	<xacro:property name="chassisLength" value="1.53774"/>
+	<xacro:property name="chassisWidth" value="2.08157"/>
+	-->
 	<xacro:property name="chassisHeight" value="0.76"/>
 	<xacro:property name="chassisLength" value="2.08157"/>
 	<xacro:property name="chassisWidth" value="1.53774"/>
 	<xacro:property name="chassisMass" value="20.0"/>
+
+	<xacro:property name="axisHeight" value="0.36388"/>
+	<xacro:property name="axisLength" value="0.20321"/>
+	<xacro:property name="axisWidth" value="0.27070"/>
+	<xacro:property name="axisMass" value="20.0"/>
+
+	<xacro:property name="suspension_arm_F_Height" value="0.30536"/>
+	<xacro:property name="suspension_arm_F_Length" value="1.02203"/>
+	<xacro:property name="suspension_arm_F_Width" value="0.39606"/>
+	<xacro:property name="suspension_arm_F_Mass" value="20.0"/>
 
 	<!-- Differential-drive wheels properties -->
 	<xacro:property name="wheelWidth" value="0.026"/>
