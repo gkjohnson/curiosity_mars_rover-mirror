@@ -9,12 +9,13 @@
 	<xacro:include filename="$(find curiosity_mars_rover_description)/urdf/curiosity_mars_rover.gazebo" />
 	<!-- Chasis -->
 	<xacro:include filename="$(find curiosity_mars_rover_description)/urdf/chassis.xacro" />
-	<!-- Arms -->
-	<!--
-	<xacro:include filename="$(find curiosity_mars_rover_description)/urdf/wheel_tree.xacro" />
-	<wheel lr="left" tY="-1"/>
-	<wheel lr="right" tY="1"/>
-	-->
+	<!-- Wheel Groups -->
+	<xacro:include filename="$(find curiosity_mars_rover_description)/urdf/wheel.xacro" />
+	<xacro:include filename="$(find curiosity_mars_rover_description)/urdf/left_wheel_group.xacro" />
+	<xacro:include filename="$(find curiosity_mars_rover_description)/urdf/right_wheel_group.xacro" />
+
 	<chassis_body/>
+	<left_wheel_tree/>
+	<right_wheel_tree/>
 
 </robot>

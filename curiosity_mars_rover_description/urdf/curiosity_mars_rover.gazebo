@@ -90,8 +90,50 @@
   </gazebo>
 
 
+  <gazebo reference="suspension_arm_F_L_to_suspension_steer_F_L">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+  </gazebo>
 
-  <!-- Caster wheel -->
+  <gazebo reference="suspension_arm_F_R_to_suspension_steer_F_R">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+  </gazebo>
+
+  <gazebo reference="suspension_steer_F_L">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+  </gazebo>
+
+    <gazebo reference="suspension_steer_F_R">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+  </gazebo>
+
+
+  <gazebo reference="suspension_arm_B2_L_to_suspension_steer_B_L">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+  </gazebo>
+
+  <gazebo reference="suspension_arm_B2_R_to_suspension_steer_B_R">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+  </gazebo>
+
+  <gazebo reference="suspension_steer_B_L">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+  </gazebo>
+
+  <gazebo reference="suspension_steer_B_R">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+  </gazebo>
+
+
+
+  <!-- Wheels -->
   <gazebo reference="caster_wheel">
     <mu1>0.0</mu1>
     <mu2>0.0</mu2>

@@ -29,10 +29,9 @@
 	<xacro:property name="suspension_arm_F_Mass" value="20.0"/>
 
 	<!-- Differential-drive wheels properties -->
-	<xacro:property name="wheelWidth" value="0.026"/>
-	<xacro:property name="wheelRadius" value="0.032"/>
+	<xacro:property name="wheelWidth" value="0.39473"/>
+	<xacro:property name="wheelRadius" value="0.242645"/>
 	<xacro:property name="wheelMass" value="0.05"/>
-	<xacro:property name="wheelOffsetY" value="0.037"/>
 	
 	
 </robot>

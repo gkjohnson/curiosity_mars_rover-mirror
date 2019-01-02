@@ -1,0 +1,145 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="right_wheel_tree" params="">
+
+	<!-- FRONT WHEEL RIGHT -->
+
+	<link name='suspension_arm_F_R_to_suspension_steer_F_R'>
+		<inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.02" />
+            <inertia ixx="2.61666666667e-05" ixy="0.0" ixz="0.0" iyy="2.61666666667e-05" iyz="0.0" izz="3.6e-05"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0.015" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.06" length="0.04"/>
+            </geometry>
+        </collision>
+		<visual>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.06" length="0.04"/>
+            </geometry>
+        </visual>
+	</link>
+
+	<joint name="suspension_arm_F_R_to_suspension_steer_F_R_joint" type="fixed">
+		<parent link="suspension_arm_F_R"/>
+		<child link="suspension_arm_F_R_to_suspension_steer_F_R"/>
+		<origin xyz="-0.2057 -0.87876 -0.29370" rpy="0 -0.1937315 0"/>
+	</joint>
+
+
+	<link name='suspension_steer_F_R'>
+		<collision>
+			<origin xyz="0 0 0"
+					rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="package://curiosity_mars_rover_description/meshes/suspension_steer_F_R_fixed.dae" scale="${scale_XYZ} ${scale_XYZ} ${scale_XYZ}"/>
+			</geometry>
+		</collision>
+
+		<visual>
+			<origin xyz="0 0 0"
+					rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="package://curiosity_mars_rover_description/meshes/suspension_steer_F_R_fixed.dae" scale="${scale_XYZ} ${scale_XYZ} ${scale_XYZ}"/>
+			</geometry>
+		</visual>
+
+		<inertial>
+			<origin xyz="0 0 0"
+					rpy="0 0 0"/>
+			<mass value="${suspension_arm_F_Mass}"/>
+			<box_inertia
+				m="${suspension_arm_F_Mass}"
+				x="${suspension_arm_F_Width*scale_XYZ}"
+				y="${suspension_arm_F_Length*scale_XYZ}"
+				z="${suspension_arm_F_Height*scale_XYZ}"/>
+		</inertial>
+	</link>
+
+  	<joint name="suspension_steer_F_R_joint" type="revolute">
+		<parent link="suspension_arm_F_R_to_suspension_steer_F_R"/>
+		<child link="suspension_steer_F_R"/>
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<limit lower="-0.2" upper="0.2" effort="10000.0" velocity="100.0"/>
+        <axis xyz="0 0 1"/>
+	</joint>
+
+
+  	<!-- FRONT WHEEL RIGHT END -->
+
+  	<!-- RIGHT BACK WHEEL -->
+	<link name='suspension_arm_B2_R_to_suspension_steer_B_R'>
+		<inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.02" />
+            <inertia ixx="2.61666666667e-05" ixy="0.0" ixz="0.0" iyy="2.61666666667e-05" iyz="0.0" izz="3.6e-05"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0.015" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.06" length="0.04"/>
+            </geometry>
+        </collision>
+		<visual>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.06" length="0.04"/>
+            </geometry>
+        </visual>
+	</link>
+
+	<joint name="suspension_arm_B2_R_to_suspension_steer_B_R_joint" type="fixed">
+		<parent link="suspension_arm_B2_R"/>
+		<child link="suspension_arm_B2_R_to_suspension_steer_B_R"/>
+		<origin xyz="-0.26271 0.62363 -0.00069" rpy="0 0 0"/>
+	</joint>
+
+
+	<link name='suspension_steer_B_R'>
+		<collision>
+			<origin xyz="0 0 0"
+					rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="package://curiosity_mars_rover_description/meshes/suspension_steer_B_R_fixed.dae" scale="${scale_XYZ} ${scale_XYZ} ${scale_XYZ}"/>
+			</geometry>
+		</collision>
+
+		<visual>
+			<origin xyz="0 0 0"
+					rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="package://curiosity_mars_rover_description/meshes/suspension_steer_B_R_fixed.dae" scale="${scale_XYZ} ${scale_XYZ} ${scale_XYZ}"/>
+			</geometry>
+		</visual>
+
+		<inertial>
+			<origin xyz="0 0 0"
+					rpy="0 0 0"/>
+			<mass value="${suspension_arm_F_Mass}"/>
+			<box_inertia
+				m="${suspension_arm_F_Mass}"
+				x="${suspension_arm_F_Width*scale_XYZ}"
+				y="${suspension_arm_F_Length*scale_XYZ}"
+				z="${suspension_arm_F_Height*scale_XYZ}"/>
+		</inertial>
+	</link>
+
+  	<joint name="suspension_steer_B_R_joint" type="revolute">
+		<parent link="suspension_arm_B2_R_to_suspension_steer_B_R"/>
+		<child link="suspension_steer_B_R"/>
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<limit lower="-0.2" upper="0.2" effort="10000.0" velocity="100.0"/>
+        <axis xyz="0 0 1"/>
+	</joint>
+
+  	<!-- END BACK WHEEL RIGHT -->
+
+    
+  </xacro:macro>
+
+</robot>

@@ -3,10 +3,10 @@
 
   <xacro:macro name="arm" params="lr tY">
 
-    
+
     <link name="${lr}_arm">
       <collision>
-        <origin xyz="0 0 ${arm_z_size/2.0}" 
+        <origin xyz="0 0 ${arm_z_size/2.0}"
         		rpy="0 0 0" />
         <geometry>
             <box size="${arm_x_size} ${arm_y_size} ${arm_z_size}"/>
@@ -14,7 +14,7 @@
       </collision>
 
       <visual>
-        <origin xyz="0 0 ${arm_z_size/2.0}" 
+        <origin xyz="0 0 ${arm_z_size/2.0}"
         		rpy="0 0 0" />
         <geometry>
           <box size="${arm_x_size} ${arm_y_size} ${arm_z_size}"/>
@@ -23,12 +23,12 @@
       </visual>
 
       <inertial>
-        <origin xyz="0 0 ${arm_z_size/2.0}" 
+        <origin xyz="0 0 ${arm_z_size/2.0}"
         		rpy="0 0 0" />
         <mass value="${armMass}"/>
-        <box_inertia 
-          m="${armMass}" 
-          x="${arm_x_size}" 
+        <box_inertia
+          m="${armMass}"
+          x="${arm_x_size}"
           y="${arm_y_size}"
           z="${arm_z_size}"/>
       </inertial>
@@ -48,15 +48,15 @@
     <joint name="${lr}_arm_hinge" type="continuous">
       <parent link="chassis"/>
       <child link="${lr}_arm"/>
-      <origin 
-        xyz = "${armOffsetX} ${-tY*(armOffsetY+arm_x_size)} ${shovel_x_size/2}" 
-        rpy = "0 0 0" /> 
-      <axis xyz="0 1 0" 
+      <origin
+        xyz = "${armOffsetX} ${-tY*(armOffsetY+arm_x_size)} ${shovel_x_size/2}"
+        rpy = "0 0 0" />
+      <axis xyz="0 1 0"
       		  rpy="0 0 0" />
       <limit effort="1000.0" velocity="0.5"/>
       <joint_properties damping="0.0" friction="0.0"/>
     </joint>
-    
+
     <transmission name="${lr}_arm_trans">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${lr}_arm_hinge">
@@ -67,11 +67,11 @@
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
-    
+
     <!-- SHOVEL -->
     <link name="${lr}_arm_shovel">
       <collision>
-        <origin xyz="0 0 0" 
+        <origin xyz="0 0 0"
         		rpy="0 0 0" />
         <geometry>
             <box size="${shovel_x_size} ${shovel_y_size} ${shovel_z_size}"/>
@@ -79,16 +79,16 @@
       </collision>
 
       <visual>
-        <origin xyz="0 0 0" 
+        <origin xyz="0 0 0"
         		rpy="0 0 0" />
         <geometry>
           <box size="${shovel_x_size} ${shovel_y_size} ${shovel_z_size}"/>
         </geometry>
         <material name="green"/>
       </visual>
-      
+
       <collision>
-        <origin xyz="0 ${tY*(shovel_x_size/2)} ${shovel_x_size/2}" 
+        <origin xyz="0 ${tY*(shovel_x_size/2)} ${shovel_x_size/2}"
         		rpy="1.57 0 0" />
         <geometry>
             <box size="${shovel_x_size} ${shovel_y_size} ${shovel_z_size}"/>
@@ -96,17 +96,17 @@
       </collision>
 
       <visual>
-        <origin xyz="0 ${tY*(shovel_x_size/2)} ${shovel_x_size/2}" 
+        <origin xyz="0 ${tY*(shovel_x_size/2)} ${shovel_x_size/2}"
         		rpy="1.57 0 0" />
         <geometry>
           <box size="${shovel_x_size} ${shovel_y_size} ${shovel_z_size}"/>
         </geometry>
         <material name="green"/>
       </visual>
-      
-      
+
+
       <collision>
-        <origin xyz="0 ${-tY*(shovel_x_size/2)} ${shovel_x_size/2}" 
+        <origin xyz="0 ${-tY*(shovel_x_size/2)} ${shovel_x_size/2}"
         		rpy="1.57 0 0" />
         <geometry>
             <box size="${shovel_x_size} ${shovel_y_size} ${shovel_z_size}"/>
@@ -114,7 +114,7 @@
       </collision>
 
       <visual>
-        <origin xyz="0 ${-tY*(shovel_x_size/2)} ${shovel_x_size/2}" 
+        <origin xyz="0 ${-tY*(shovel_x_size/2)} ${shovel_x_size/2}"
         		rpy="1.57 0 0" />
         <geometry>
           <box size="${shovel_x_size} ${shovel_y_size} ${shovel_z_size}"/>
@@ -123,12 +123,12 @@
       </visual>
 
       <inertial>
-        <origin xyz="0 0 0" 
+        <origin xyz="0 0 0"
         		rpy="0 0 0" />
         <mass value="${shovelMass}"/>
-        <box_inertia 
-          m="${shovelMass}" 
-          x="${shovel_x_size}" 
+        <box_inertia
+          m="${shovelMass}"
+          x="${shovel_x_size}"
           y="${shovel_y_size}"
           z="${shovel_z_size}"/>
       </inertial>
@@ -148,16 +148,16 @@
     <joint name="${lr}_arm_shovel_hinge" type="fixed">
       <parent link="${lr}_arm"/>
       <child link="${lr}_arm_shovel"/>
-      <origin 
-        xyz = "${shovelOffsetX} ${shovelOffsetY} ${arm_z_size}" 
+      <origin
+        xyz = "${shovelOffsetX} ${shovelOffsetY} ${arm_z_size}"
         rpy = "${-tY*1.57} 0 0" />
     </joint>
-    
-    
+
+
     <link name="${lr}_arm_shovel_lid">
-      
+
       <collision>
-        <origin xyz="0 0 ${shovel_x_size/2}" 
+        <origin xyz="0 0 ${shovel_x_size/2}"
         		rpy="0 1.57 0" />
         <geometry>
             <box size="${shovel_x_size} ${shovel_y_size} ${shovel_z_size/5}"/>
@@ -165,7 +165,7 @@
       </collision>
 
       <visual>
-        <origin xyz="0 0 ${shovel_x_size/2}" 
+        <origin xyz="0 0 ${shovel_x_size/2}"
         		rpy="0 1.57 0" />
         <geometry>
           <box size="${shovel_x_size} ${shovel_y_size} ${shovel_z_size/5}"/>
@@ -174,17 +174,17 @@
       </visual>
 
       <inertial>
-        <origin xyz="0 0 ${shovel_x_size/2}" 
+        <origin xyz="0 0 ${shovel_x_size/2}"
         		rpy="0 1.57 0" />
         <mass value="${shovelMass}"/>
-        <box_inertia 
-          m="${shovelMass}" 
-          x="${shovel_x_size}" 
+        <box_inertia
+          m="${shovelMass}"
+          x="${shovel_x_size}"
           y="${shovel_y_size}"
           z="${shovel_z_size/5}"/>
       </inertial>
     </link>
-    
+
     <gazebo reference="${lr}_arm_shovel_lid">
       <mu1 value="0.001"/>
       <mu2 value="0.001"/>
@@ -195,7 +195,7 @@
       -->
       <material>Gazebo/Red</material>
     </gazebo>
-    
+
     <joint name="${lr}_arm_shovel_lid_joint" type="prismatic">
       <origin rpy="${-tY*1.57} 0 0" xyz="${shovel_x_size/2} 0 ${arm_z_size}" />
       <parent link="${lr}_arm" />
@@ -203,8 +203,8 @@
       <axis xyz="0 0 1" />
       <limit effort="1000.0" lower="-0.2" upper="0.0" velocity="1.0" />
     </joint>
-  
-  
+
+
   <transmission name="${lr}_arm_shovel_lid_trans">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${lr}_arm_shovel_lid_joint">
