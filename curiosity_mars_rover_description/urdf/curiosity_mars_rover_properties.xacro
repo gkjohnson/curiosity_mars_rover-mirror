@@ -28,6 +28,11 @@
 	<xacro:property name="suspension_arm_F_Width" value="0.39606"/>
 	<xacro:property name="suspension_arm_F_Mass" value="20.0"/>
 
+	<xacro:property name="armHeight" value="0.01"/>
+	<xacro:property name="armLength" value="0.01"/>
+	<xacro:property name="armWidth" value="0.01"/>
+	<xacro:property name="armMass" value="0.01"/>
+
 	<!-- Differential-drive wheels properties -->
 	<xacro:property name="wheelWidth" value="0.39473"/>
 	<xacro:property name="wheelRadius" value="0.242645"/>

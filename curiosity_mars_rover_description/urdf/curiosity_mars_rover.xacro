@@ -13,9 +13,15 @@
 	<xacro:include filename="$(find curiosity_mars_rover_description)/urdf/wheel.xacro" />
 	<xacro:include filename="$(find curiosity_mars_rover_description)/urdf/left_wheel_group.xacro" />
 	<xacro:include filename="$(find curiosity_mars_rover_description)/urdf/right_wheel_group.xacro" />
+	<!-- Arm -->
+	<xacro:include filename="$(find curiosity_mars_rover_description)/urdf/arm.xacro" />
+	<!-- Sensor Mast -->
+	<xacro:include filename="$(find curiosity_mars_rover_description)/urdf/sensor_mast.xacro" />
 
 	<chassis_body/>
 	<left_wheel_tree/>
 	<right_wheel_tree/>
+	<arm/>
+	<sensor_mast/>
 
 </robot>
