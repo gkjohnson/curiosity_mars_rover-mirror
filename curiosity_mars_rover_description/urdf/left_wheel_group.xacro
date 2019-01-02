@@ -69,6 +69,37 @@
         <axis xyz="0 0 1"/>
 	</joint>
 
+	<link name='suspension_steer_F_L_to_front_wheel_L'>
+		<inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.02" />
+            <inertia ixx="2.61666666667e-05" ixy="0.0" ixz="0.0" iyy="2.61666666667e-05" iyz="0.0" izz="3.6e-05"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 1.57 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.02" length="0.02"/>
+            </geometry>
+        </collision>
+		<visual>
+            <origin rpy="0.0 1.57 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.02" length="0.02"/>
+            </geometry>
+        </visual>
+	</link>
+
+	<joint name="suspension_steer_F_L_to_suspension_steer_F_L_to_front_wheel_L_joint" type="fixed">
+		<parent link="suspension_steer_F_L"/>
+		<child link="suspension_steer_F_L_to_front_wheel_L"/>
+		<origin xyz="0 0 -0.3996" rpy="0 0 0"/>
+	</joint>
+
+  	<wheel
+		wheel_name="front_wheel_L"
+		wheel_conector_name="suspension_steer_F_L_to_front_wheel_L"
+		tY="0"/>
+
 
   	<!-- FRONT LEFT Wheel Left END -->
 
@@ -85,13 +116,13 @@
         <collision>
             <origin rpy="0.0 1.57 0" xyz="0 0 0"/>
             <geometry>
-                <cylinder radius="0.242645" length="0.39473"/>
+                <cylinder radius="0.02" length="0.02"/>
             </geometry>
         </collision>
 		<visual>
             <origin rpy="0.0 1.57 0" xyz="0 0 0"/>
             <geometry>
-                <cylinder radius="0.242645" length="0.39473"/>
+                <cylinder radius="0.02" length="0.02"/>
             </geometry>
         </visual>
 	</link>
@@ -174,6 +205,38 @@
 		<limit lower="-0.2" upper="0.2" effort="10000.0" velocity="100.0"/>
         <axis xyz="0 0 1"/>
 	</joint>
+
+
+  	<link name='suspension_steer_B_L_to_back_wheel_L'>
+		<inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.02" />
+            <inertia ixx="2.61666666667e-05" ixy="0.0" ixz="0.0" iyy="2.61666666667e-05" iyz="0.0" izz="3.6e-05"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 1.57 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.02" length="0.02"/>
+            </geometry>
+        </collision>
+		<visual>
+            <origin rpy="0.0 1.57 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.02" length="0.02"/>
+            </geometry>
+        </visual>
+	</link>
+
+	<joint name="suspension_arm_B2_L_to_suspension_steer_B_L_to_back_wheel_L_joint" type="fixed">
+		<parent link="suspension_steer_B_L"/>
+		<child link="suspension_steer_B_L_to_back_wheel_L"/>
+		<origin xyz="0 0 -0.410523" rpy="0 0 0"/>
+	</joint>
+
+  	<wheel
+		wheel_name="back_wheel_L"
+		wheel_conector_name="suspension_steer_B_L_to_back_wheel_L"
+		tY="0"/>
 
   	<!-- END BACK WHEEL LEFT -->
   </xacro:macro>
