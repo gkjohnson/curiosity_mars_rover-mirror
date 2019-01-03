@@ -117,8 +117,8 @@ class CuriosityMarsRoverAckerMan(object):
 
         if mode_name == "standard":
 
-            self.suspension_arm_B2_L_pos_msg.data = -0.7
-            self.suspension_arm_B2_R_pos_msg.data = -0.7
+            self.suspension_arm_B2_L_pos_msg.data = -0.2
+            self.suspension_arm_B2_R_pos_msg.data = -0.2
             self.suspension_arm_B_L_pos_msg.data = -0.2
             self.suspension_arm_B_R_pos_msg.data = -0.2
             self.suspension_arm_F_L_pos_msg.data = 0.2
@@ -195,15 +195,23 @@ class CuriosityMarsRoverAckerMan(object):
         self.set_wheels_speed(10.0)
         self.set_turning_radius(-1.0)
 
+    def move_turn_stop(self):
+        self.set_wheels_speed(0.0)
+        self.set_turning_radius(None)
+
+
 
 if __name__ == "__main__":
     rospy.init_node("GarbageCollector_HightCalibration")
     curiosity_mars_rover_ackerman_object = CuriosityMarsRoverAckerMan()
     rate = rospy.Rate(10.0)
     while not rospy.is_shutdown():
-        curiosity_mars_rover_ackerman_object.move_forwards()
+        #curiosity_mars_rover_ackerman_object.move_forwards()
         #curiosity_mars_rover_ackerman_object.move_backwards()
         #curiosity_mars_rover_ackerman_object.move_turn_right()
+        curiosity_mars_rover_ackerman_object.move_turn_left()
+        #curiosity_mars_rover_ackerman_object.move_turn_stop()
+
         rate.sleep()
 
 
