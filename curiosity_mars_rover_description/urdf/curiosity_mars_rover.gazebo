@@ -5,7 +5,7 @@
   <gazebo>
     <plugin name="gazebo_ros_control" 
             filename="libgazebo_ros_control.so">
-      <robotNamespace>/garbagecollector</robotNamespace>
+      <robotNamespace>/curiosity_mars_rover</robotNamespace>
       <robotParam>/robot_description</robotParam>
       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
     </plugin>
@@ -14,7 +14,7 @@
 
   <!--
     The plugin broadcasts a body's pose and rates through ROS nav_msgs::Odometry message.
-    The plugin broadcasts pose and rate of a body named "chassis" over ROS topic name "garbagecollector/odom".
+    The plugin broadcasts pose and rate of a body named "chassis" over ROS topic name "curiosity_mars_rover/odom".
   -->
   <gazebo>
     <plugin name="ground_truth"

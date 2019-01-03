@@ -21,7 +21,9 @@
 	<chassis_body/>
 	<left_wheel_tree/>
 	<right_wheel_tree/>
+	<!--
 	<arm/>
 	<sensor_mast/>
+	-->
 
 </robot>
