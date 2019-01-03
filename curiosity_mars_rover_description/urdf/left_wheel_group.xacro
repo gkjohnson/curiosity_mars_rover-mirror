@@ -74,11 +74,21 @@
 		<parent link="left_axis"/>
 		<child link="suspension_arm_F_L"/>
 		<origin xyz="0 0 0" rpy="0 0 0"/>
-		<limit lower="-0.2" upper="0.2" effort="10000.0" velocity="100.0"/>
+		<limit lower="${-suspension_arm_F_L_limit}" upper="${suspension_arm_F_L_limit}" effort="${suspension_effort}" velocity="${suspension_speed}"/>
         <axis xyz="1 0 0"/>
+		<joint_properties damping="${suspension_damping}" friction="${suspension_friction}"/>
 	</joint>
 
-
+	<transmission name="suspension_arm_F_L_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="suspension_arm_F_L_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="suspension_arm_F_LMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
 
   	<link name='suspension_arm_B_L'>
 		<collision>
@@ -113,9 +123,22 @@
 		<parent link="left_axis"/>
 		<child link="suspension_arm_B_L"/>
 		<origin xyz="0 0 0" rpy="0 0 0"/>
-		<limit lower="-0.2" upper="0.2" effort="10000.0" velocity="100.0"/>
+		<limit lower="${-suspension_arm_B_L_limit}" upper="${suspension_arm_B_L_limit}" effort="${suspension_effort}" velocity="${suspension_speed}"/>
         <axis xyz="1 0 0"/>
+		<joint_properties damping="${suspension_damping}" friction="${suspension_friction}"/>
 	</joint>
+
+	<transmission name="suspension_arm_B_L_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="suspension_arm_B_L_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="suspension_arm_B_LMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
 
  	<link name='suspension_arm_B_L_to_B2_L'>
 		<inertial>
@@ -177,9 +200,21 @@
 		<parent link="suspension_arm_B_L_to_B2_L"/>
 		<child link="suspension_arm_B2_L"/>
 		<origin xyz="0 0 0" rpy="0 0 0"/>
-		<limit lower="-0.2" upper="0.2" effort="10000.0" velocity="100.0"/>
+		<limit lower="${suspension_arm_B2_lower_limit}" upper="${suspension_arm_B2_upper_limit}" effort="${suspension_effort}" velocity="${suspension_speed}"/>
         <axis xyz="1 0 0"/>
+		<joint_properties damping="${suspension_damping}" friction="${suspension_friction}"/>
 	</joint>
+
+	<transmission name="suspension_arm_B2_L_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="suspension_arm_B2_L_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="suspension_arm_B2_LMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
 
 
 	<!-- FRONT WHEEL -->
@@ -243,9 +278,20 @@
 		<parent link="suspension_arm_F_L_to_suspension_steer_F_L"/>
 		<child link="suspension_steer_F_L"/>
 		<origin xyz="0 0 0" rpy="0 0 0"/>
-		<limit lower="-0.2" upper="0.2" effort="10000.0" velocity="100.0"/>
+		<limit lower="${-suspension_steer_limit}" upper="${suspension_steer_limit}" effort="${suspension_steer_effort}" velocity="${suspension_steer_velocity}"/>
         <axis xyz="0 0 1"/>
 	</joint>
+
+	<transmission name="suspension_steer_F_L_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="suspension_steer_F_L_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="suspension_steer_F_LMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
 
 	<link name='suspension_steer_F_L_to_front_wheel_L'>
 		<inertial>
@@ -380,9 +426,20 @@
 		<parent link="suspension_arm_B2_L_to_suspension_steer_B_L"/>
 		<child link="suspension_steer_B_L"/>
 		<origin xyz="0 0 0" rpy="0 0 0"/>
-		<limit lower="-0.2" upper="0.2" effort="10000.0" velocity="100.0"/>
+		<limit lower="${-suspension_steer_limit}" upper="${suspension_steer_limit}" effort="${suspension_steer_effort}" velocity="${suspension_steer_velocity}"/>
         <axis xyz="0 0 1"/>
 	</joint>
+
+	<transmission name="suspension_steer_B_L_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="suspension_steer_B_L_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="suspension_steer_B_LMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
 
 
   	<link name='suspension_steer_B_L_to_back_wheel_L'>

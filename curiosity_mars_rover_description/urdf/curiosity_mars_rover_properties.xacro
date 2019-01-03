@@ -28,16 +28,20 @@
 	<xacro:property name="suspension_arm_F_L_X" value="0.39606"/>
 	<xacro:property name="suspension_arm_F_L_Y" value="1.02203"/>
 	<xacro:property name="suspension_arm_F_L_Z" value="0.30536"/>
+	<xacro:property name="suspension_arm_F_L_limit" value="0.4"/>
 
 	<xacro:property name="suspension_arm_B_L_Mass" value="${TreeMass/TreeParts}"/>
 	<xacro:property name="suspension_arm_B_L_X" value="0.123524"/>
 	<xacro:property name="suspension_arm_B_L_Y" value="0.852108"/>
 	<xacro:property name="suspension_arm_B_L_Z" value="0.348354"/>
+	<xacro:property name="suspension_arm_B_L_limit" value="0.4"/>
 
 	<xacro:property name="suspension_arm_B2_L_Mass" value="${TreeMass/TreeParts}"/>
 	<xacro:property name="suspension_arm_B2_L_X" value="0.400262"/>
 	<xacro:property name="suspension_arm_B2_L_Y" value="1.22113"/>
 	<xacro:property name="suspension_arm_B2_L_Z" value="0.631338"/>
+	<xacro:property name="suspension_arm_B2_lower_limit" value="-1.2"/>
+	<xacro:property name="suspension_arm_B2_upper_limit" value="0.1"/>
 
 	<xacro:property name="suspension_steer_F_L_Mass" value="${TreeMass/TreeParts}"/>
 	<xacro:property name="suspension_steer_F_L_X" value="0.528399"/>
@@ -49,9 +53,18 @@
 	<xacro:property name="suspension_steer_B_L_Y" value="0.21019"/>
 	<xacro:property name="suspension_steer_B_L_Z" value="0.450036"/>
 
+	<xacro:property name="suspension_steer_limit" value="0.6"/>
+	<xacro:property name="suspension_steer_effort" value="10000.0"/>
+	<xacro:property name="suspension_steer_velocity" value="10.0"/>
+
+	<xacro:property name="suspension_effort" value="10000.0"/>
+	<xacro:property name="suspension_speed" value="10.0"/>
+	<xacro:property name="suspension_damping" value="0.5"/>
+	<xacro:property name="suspension_friction" value="0.5"/>
+
 	<!-- Wheels properties -->
 	<xacro:property name="wheelWidth" value="0.39473"/>
-	<xacro:property name="wheelRadius" value="0.242645"/>
+	<xacro:property name="wheelRadius" value="0.242647"/>
 	<xacro:property name="wheelMass" value="2.07"/>
 
 	<!-- Arm -->

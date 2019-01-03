@@ -6,9 +6,9 @@
     <link name='${wheel_name}'>
 		<collision>
 			<origin xyz="0 0 0"
-					rpy="0 0 0"/>
+					rpy="0 1.57 0"/>
 			<geometry>
-				<mesh filename="package://curiosity_mars_rover_description/meshes/wheel.dae" scale="${scale_XYZ} ${scale_XYZ} ${scale_XYZ}"/>
+				<cylinder radius="${wheelRadius}" length="${wheelWidth}"/>
 			</geometry>
 		</collision>
 
@@ -16,7 +16,7 @@
 			<origin xyz="0 0 0"
 					rpy="0 0 0"/>
 			<geometry>
-				<mesh filename="package://curiosity_mars_rover_description/meshes/wheel.dae" scale="${scale_XYZ} ${scale_XYZ} ${scale_XYZ}"/>
+				<mesh filename="package://curiosity_mars_rover_description/meshes/wheel_fixed.dae" scale="${scale_XYZ} ${scale_XYZ} ${scale_XYZ}"/>
 			</geometry>
 		</visual>
 

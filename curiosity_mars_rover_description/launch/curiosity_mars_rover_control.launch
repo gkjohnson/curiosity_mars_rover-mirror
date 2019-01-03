@@ -21,6 +21,16 @@
                               front_wheel_R_joint_velocity_controller
                               middle_wheel_R_joint_velocity_controller
                               back_wheel_R_joint_velocity_controller
+                              suspension_arm_F_L_joint_position_controller
+                              suspension_arm_B_L_joint_position_controller
+                              suspension_arm_B2_L_joint_position_controller
+                              suspension_arm_F_R_joint_position_controller
+                              suspension_arm_B_R_joint_position_controller
+                              suspension_arm_B2_R_joint_position_controller
+                              suspension_steer_F_L_joint_position_controller
+                              suspension_steer_B_L_joint_position_controller
+                              suspension_steer_F_R_joint_position_controller
+                              suspension_steer_B_R_joint_position_controller
                               --shutdown-timeout 3">
   </node>
 

@@ -1,0 +1,4 @@
+<launch>
+	<include file="$(find curiosity_mars_rover_description)/launch/curiosity_mars_rover_spawn.launch"/>
+	<include file="$(find curiosity_mars_rover_description)/launch/curiosity_mars_rover_control.launch"/>
+</launch>
