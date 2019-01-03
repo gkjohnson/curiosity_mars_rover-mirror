@@ -50,12 +50,12 @@
 		<inertial>
 			<origin xyz="0 0 0"
 					rpy="0 0 0"/>
-			<mass value="${armMass}"/>
+			<mass value="${arm_01_Mass}"/>
 			<box_inertia
-				m="${armMass}"
-				x="${armWidth*scale_XYZ}"
-				y="${armLength*scale_XYZ}"
-				z="${armHeight*scale_XYZ}"/>
+				m="${arm_01_Mass}"
+				x="${arm_01_X*scale_XYZ}"
+				y="${arm_01_Y*scale_XYZ}"
+				z="${arm_01_Z*scale_XYZ}"/>
 		</inertial>
 	</link>
 
@@ -128,12 +128,12 @@
 		<inertial>
 			<origin xyz="0 0 0"
 					rpy="0 0 0"/>
-			<mass value="${armMass}"/>
+			<mass value="${arm_02_Mass}"/>
 			<box_inertia
-				m="${armMass}"
-				x="${armWidth*scale_XYZ}"
-				y="${armLength*scale_XYZ}"
-				z="${armHeight*scale_XYZ}"/>
+				m="${arm_02_Mass}"
+				x="${arm_02_X*scale_XYZ}"
+				y="${arm_02_Y*scale_XYZ}"
+				z="${arm_02_Z*scale_XYZ}"/>
 		</inertial>
 	</link>
 
@@ -206,12 +206,12 @@
 		<inertial>
 			<origin xyz="0 0 0"
 					rpy="0 0 0"/>
-			<mass value="${armMass}"/>
+			<mass value="${arm_03_Mass}"/>
 			<box_inertia
-				m="${armMass}"
-				x="${armWidth*scale_XYZ}"
-				y="${armLength*scale_XYZ}"
-				z="${armHeight*scale_XYZ}"/>
+				m="${arm_03_Mass}"
+				x="${arm_03_X*scale_XYZ}"
+				y="${arm_03_Y*scale_XYZ}"
+				z="${arm_03_Z*scale_XYZ}"/>
 		</inertial>
 	</link>
 
@@ -285,12 +285,12 @@
 		<inertial>
 			<origin xyz="0 0 0"
 					rpy="0 0 0"/>
-			<mass value="${armMass}"/>
+			<mass value="${arm_04_Mass}"/>
 			<box_inertia
-				m="${armMass}"
-				x="${armWidth*scale_XYZ}"
-				y="${armLength*scale_XYZ}"
-				z="${armHeight*scale_XYZ}"/>
+				m="${arm_04_Mass}"
+				x="${arm_04_X*scale_XYZ}"
+				y="${arm_04_Y*scale_XYZ}"
+				z="${arm_04_Z*scale_XYZ}"/>
 		</inertial>
 	</link>
 
@@ -364,12 +364,12 @@
 		<inertial>
 			<origin xyz="0 0 0"
 					rpy="0 0 0"/>
-			<mass value="${armMass}"/>
+			<mass value="${arm_tools_Mass}"/>
 			<box_inertia
-				m="${armMass}"
-				x="${armWidth*scale_XYZ}"
-				y="${armLength*scale_XYZ}"
-				z="${armHeight*scale_XYZ}"/>
+				m="${arm_tools_Mass}"
+				x="${arm_tools_X*scale_XYZ}"
+				y="${arm_tools_Y*scale_XYZ}"
+				z="${arm_tools_Z*scale_XYZ}"/>
 		</inertial>
 	</link>
 
