@@ -2,11 +2,12 @@
 import time
 import rospy
 from std_msgs.msg import Float64
+from geometry_msgs.msg import Twist
 
 
 class CuriosityMarsRoverAckerMan(object):
     def __init__(self):
-        rospy.loginfo("GarbageCollector Initialising...")
+        rospy.loginfo("CuriosityRoverAckerMan Initialising...")
 
         # TODO: Ackerman stuff
         self.distance_axis = 0.3
@@ -16,7 +17,6 @@ class CuriosityMarsRoverAckerMan(object):
         self.publishers_curiosity_d = {}
         self.controller_ns = "curiosity_mars_rover"
         self.controller_command = "command"
-        # self.back_wheel_L_joint_velocity_controller
         self.controllers_list = [   "back_wheel_L_joint_velocity_controller",
                                     "back_wheel_R_joint_velocity_controller",
                                     "front_wheel_L_joint_velocity_controller",
@@ -46,7 +46,14 @@ class CuriosityMarsRoverAckerMan(object):
         self.init_publisher_variables()
         self.init_state()
 
+        self.cmd_vel_msg = Twist()
+        cmd_vel_topic = "/cmd_vel"
+        rospy.Subscriber(cmd_vel_topic, Twist, self.cmd_vel_callback)
+
         rospy.logwarn("CuriosityMarsRoverAckerMan...READY")
+
+    def cmd_vel_callback(self, msg):
+        self.cmd_vel_msg = msg
 
     def wait_publishers_to_be_ready(self):
 
@@ -200,18 +207,24 @@ class CuriosityMarsRoverAckerMan(object):
         self.set_turning_radius(None)
 
 
+    def move_with_cmd_vel(self):
+        wheel_speed = self.cmd_vel_msg.linear.x
+        turning_radius = self.cmd_vel_msg.angular.z
+        if turning_radius == 0.0:
+            turning_radius = None
+
+        rospy.logdebug("turning_radius="+str(turning_radius)+",wheel_speed="+str(wheel_speed))
+        self.set_turning_radius(turning_radius)
+        self.set_wheels_speed(wheel_speed)
+
+
 
 if __name__ == "__main__":
-    rospy.init_node("GarbageCollector_HightCalibration")
+    rospy.init_node("CuriosityRoverAckerMan_node", log_level=rospy.INFO)
     curiosity_mars_rover_ackerman_object = CuriosityMarsRoverAckerMan()
     rate = rospy.Rate(10.0)
     while not rospy.is_shutdown():
-        #curiosity_mars_rover_ackerman_object.move_forwards()
-        #curiosity_mars_rover_ackerman_object.move_backwards()
-        #curiosity_mars_rover_ackerman_object.move_turn_right()
-        curiosity_mars_rover_ackerman_object.move_turn_left()
-        #curiosity_mars_rover_ackerman_object.move_turn_stop()
-
+        curiosity_mars_rover_ackerman_object.move_with_cmd_vel()
         rate.sleep()
 
 
